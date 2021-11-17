@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import TestStripe from "./stripe";
+import Button from "@material-ui/core/Button";
+import useStyles from "./styles";
+import { Grid, Paper, Container } from "@material-ui/core";
+import Products from "./Products";
+import CustomerStripe from "./components/customerStripe";
+import StripeGlobal from "./components/stripeGlobal";
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+      <StripeGlobal />
+      {/*<CustomerStripe />*/}
+    </Container>
   );
 }
 
